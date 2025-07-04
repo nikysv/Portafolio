@@ -1,0 +1,456 @@
+/* Variables para parallax */
+:root {
+  --scroll-y: 0px;
+  --parallax-1: 0px;
+  --parallax-2: 0px;
+  --parallax-3: 0px;
+}
+
+/* Variables */
+:root {
+  --blue-900: #1e3a8a;
+  --blue-600: #2563eb;
+  --blue-300: #60a5fa;
+  --white: #ffffff;
+}
+
+/* Fondo general blanco para todo el sitio */
+body {
+  margin: 0;
+  background-color: white;
+  color: var(--blue-900);
+  font-family: sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* FONDO animado tipo líquido para todo el sitio */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+      circle 400px at calc(25% + var(--parallax-1) * 0.1)
+        calc(25% + var(--parallax-1) * 0.05),
+      rgba(30, 58, 138, 0.35) 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 350px at calc(75% + var(--parallax-2) * 0.08)
+        calc(30% + var(--parallax-2) * 0.06),
+      rgba(30, 58, 138, 0.3) 0%,
+      rgba(255, 255, 255, 0.12) 45%,
+      transparent 65%
+    ),
+    radial-gradient(
+      circle 500px at calc(20% + var(--parallax-3) * 0.12)
+        calc(80% + var(--parallax-3) * 0.04),
+      rgba(30, 58, 138, 0.25) 0%,
+      rgba(255, 255, 255, 0.1) 40%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle 300px at calc(80% + var(--parallax-1) * 0.06)
+        calc(75% + var(--parallax-1) * 0.08),
+      rgba(30, 58, 138, 0.4) 0%,
+      rgba(255, 255, 255, 0.18) 35%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle 450px at calc(50% + var(--parallax-2) * 0.04)
+        calc(50% + var(--parallax-2) * 0.1),
+      rgba(30, 58, 138, 0.2) 0%,
+      rgba(255, 255, 255, 0.08) 60%,
+      transparent 80%
+    );
+  animation: enhanced-float 20s infinite ease-in-out;
+  transition: all 0.1s ease-out;
+}
+
+/* Animación más pronunciada */
+@keyframes enhanced-float {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(40px, -30px) scale(1.15) rotate(90deg);
+  }
+  50% {
+    transform: translate(-30px, 45px) scale(0.85) rotate(180deg);
+  }
+  75% {
+    transform: translate(35px, 20px) scale(1.1) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(360deg);
+  }
+}
+
+/* Animación suave para móviles */
+@keyframes gentle-float-mobile {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(15px, -10px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* ───────── HEADER (header-footer.css) ───────── */
+.header {
+  position: fixed;
+  inset: 0 0 auto 0; /* top:0; left:0; right:0 */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+/* Branding (Nikywin) */
+.brand__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--blue-900);
+  margin: 0;
+  /* opcional: animación de brillo suave */
+  animation: brand-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes brand-glow {
+  0% {
+    text-shadow: 0 0 4px var(--blue-300);
+  }
+  100% {
+    text-shadow: 0 0 12px var(--blue-600), 0 0 20px var(--blue-300);
+  }
+}
+
+/* Menú de navegación */
+.nav__list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  position: relative;
+  text-decoration: none;
+  color: var(--blue-900);
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+  isolation: isolate; /* evita que el pseudo-elemento afecte a otros */
+}
+/* Hover con degradé animado de azules */
+.nav__link:hover {
+  color: var(--white);
+  background: linear-gradient(
+    45deg,
+    var(--blue-300),
+    var(--blue-600),
+    var(--blue-900)
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Efecto de fondo con degradé */
+.nav__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    var(--blue-300),
+    var(--blue-600),
+    var(--blue-900)
+  );
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(1.1);
+  border-radius: 20px;
+}
+
+/* Hover que afecta solo al botón activo */
+.nav__link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ───────── FOOTER ───────── */
+.footer {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(30, 58, 138, 0.1);
+  margin-top: 50px;
+}
+
+.footer small {
+  color: var(--blue-900);
+  font-size: 0.9rem;
+}
+
+/* Accesibilidad: opción para reducir animación */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    background: radial-gradient(
+        circle 200px at 30% 30%,
+        rgba(30, 58, 138, 0.1) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle 150px at 70% 70%,
+        rgba(30, 58, 138, 0.08) 0%,
+        rgba(255, 255, 255, 0.02) 45%,
+        transparent 65%
+      );
+  }
+}
+
+/* Botón hamburguesa (oculto por defecto) */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav__toggle-line {
+  width: 24px;
+  height: 3px;
+  background-color: var(--blue-900);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación del botón hamburguesa cuando está activo */
+.nav__toggle.active .nav__toggle-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav__toggle.active .nav__toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__toggle.active .nav__toggle-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ───────── RESPONSIVE DESIGN ───────── */
+
+/* Tablet y pantallas medianas */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+  }
+
+  .brand__title {
+    font-size: 1.5rem;
+  }
+
+  .nav__list {
+    gap: 15px;
+  }
+
+  .nav__link {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles - Activar menú hamburguesa */
+@media (max-width: 600px) {
+  .header {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+
+  .nav__toggle {
+    display: flex;
+    order: 2;
+  }
+
+  .header__brand {
+    order: 1;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav__list.active {
+    display: flex;
+  }
+
+  .nav__item {
+    width: 100%;
+  }
+
+  .nav__link {
+    display: block;
+    padding: 12px 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+
+  .nav__link:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 15px;
+  }
+
+  .brand__title {
+    font-size: 1.4rem;
+  }
+
+  .nav__link {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+  .header {
+    padding: 10px 12px;
+  }
+
+  .brand__title {
+    font-size: 1.2rem;
+  }
+
+  .nav__link {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+}
+
+/* ───────── RESPONSIVE BACKGROUND ───────── */
+
+/* Tablet - Reducir la intensidad de la animación */
+@media (max-width: 768px) {
+  body::before {
+    animation: enhanced-float 30s infinite ease-in-out;
+    background: radial-gradient(
+        circle 300px at calc(25% + var(--parallax-1) * 0.05)
+          calc(25% + var(--parallax-1) * 0.02),
+        rgba(30, 58, 138, 0.25) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle 250px at calc(75% + var(--parallax-2) * 0.04)
+          calc(70% + var(--parallax-2) * 0.03),
+        rgba(30, 58, 138, 0.2) 0%,
+        rgba(255, 255, 255, 0.08) 45%,
+        transparent 65%
+      ),
+      radial-gradient(
+        circle 200px at calc(50% + var(--parallax-3) * 0.02)
+          calc(50% + var(--parallax-3) * 0.01),
+        rgba(30, 58, 138, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 60%,
+        transparent 80%
+      );
+  }
+}
+
+/* Móvil - Animación muy suave sin rotación */
+@media (max-width: 600px) {
+  body::before {
+    animation: gentle-float-mobile 25s infinite ease-in-out;
+    background: radial-gradient(
+        circle 200px at calc(30% + var(--parallax-1) * 0.02)
+          calc(20% + var(--parallax-1) * 0.01),
+        rgba(30, 58, 138, 0.2) 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle 150px at calc(70% + var(--parallax-2) * 0.01)
+          calc(80% + var(--parallax-2) * 0.01),
+        rgba(30, 58, 138, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 45%,
+        transparent 65%
+      );
+  }
+}
+
+/* Móvil muy pequeño - Fondo casi estático */
+@media (max-width: 360px) {
+  body::before {
+    animation: none;
+    background: radial-gradient(
+        circle 150px at 30% 30%,
+        rgba(30, 58, 138, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle 100px at 70% 70%,
+        rgba(30, 58, 138, 0.1) 0%,
+        rgba(255, 255, 255, 0.03) 45%,
+        transparent 65%
+      );
+  }
+}
