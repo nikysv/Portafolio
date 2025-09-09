@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos - Mi Portafolio</title>
+    <link rel="stylesheet" href="css/header-footer.css" />
+    <link rel="stylesheet" href="css/proyectos.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__brand">
+        <h1 class="brand__title">NSV</h1>
+      </div>
+
+      <!-- Botón hamburguesa para móvil -->
+      <button
+        class="nav__toggle"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+      >
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+
+      <nav class="nav" aria-label="Menú principal">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="index.html">Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="habilidades.html">Habilidades</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link active" href="proyectos.html">Proyectos</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="projects-container">
+      <!-- Hero Section -->
+      <section class="projects-hero">
+        <div class="projects-hero__content">
+          <h1 class="projects-hero__title">
+            Mis <span class="gradient-text">Proyectos</span>
+          </h1>
+          <p class="projects-hero__subtitle">
+            Una colección de proyectos que demuestran mis habilidades y
+            experiencia en desarrollo
+          </p>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects-section">
+        <div class="projects-content">
+          <!-- Proyecto 1 - Imagen a la izquierda -->
+          <article class="project-card project-left" data-animation="fade-up">
+            <div class="project-image">
+              <img
+                src="assets/nikywinstore.png"
+                alt="Proyecto 1"
+                class="project-img"
+              />
+              <div class="project-overlay">
+                <div class="project-tech">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">CSS</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">NikyWin Store</h3>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/nikysv/NikywinStore1?tab=readme-ov-file"
+                    class="project-link github-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://nikysv.github.io/NikywinStore1/"
+                    class="project-link demo-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                    Demo
+                  </a>
+                </div>
+              </div>
+              <p class="project-description">
+                Nikywin Store es una tienda virtual sencilla hecha con HTML, CSS
+                y JavaScript. Fue creada como un proyecto práctico para aprender
+                diseño web y animaciones básicas.
+              </p>
+              <div class="project-features">
+                <h4 class="features-title">Características principales:</h4>
+                <ul class="features-list">
+                  <li>Diseño limpio y amigable</li>
+                  <li>Interactividad con JavaScript</li>
+                  <li>Estilos modernos con CSS</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 2 - Imagen a la derecha -->
+          <article class="project-card project-right" data-animation="fade-up">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">NOTESAPP PWA</h3>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/nikysv/noteSPA---PWA"
+                    class="project-link github-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://lnkd.in/eitf-A9R"
+                    class="project-link demo-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                    Demo
+                  </a>
+                </div>
+              </div>
+              <p class="project-description">
+                Project Summary This is a Full Stack Notes App built as part of
+                a technical challenge. It allows users to create, edit, delete,
+                archive, and filter notes by tags. The project is structured as
+                a Single Page Application (SPA) using modern web technologies,
+                and follows a clean architecture with separated concerns between
+                frontend and backend.
+              </p>
+              <div class="project-features">
+                <h4 class="features-title">Características principales:</h4>
+                <ul class="features-list">
+                  <li>Can download notes as PWA</li>
+                  <li>Used PostgreSQL, Netlify and Render</li>
+                  <li>Modern UI with Tailwind CSS</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="assets/PWA.png" alt="Proyecto 2" class="project-img" />
+              <div class="project-overlay">
+                <div class="project-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Express.js</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 3 - Imagen a la izquierda -->
+          <article class="project-card project-left" data-animation="fade-up">
+            <div class="project-image">
+              <img
+                src="assets/floresamarillas.png"
+                alt="Proyecto 3"
+                class="project-img"
+              />
+              <div class="project-overlay">
+                <div class="project-tech">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">YellowFlower</h3>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/nikysv/YellowFlower"
+                    class="project-link github-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://nikysv.github.io/YellowFlower/mensaje.html"
+                    class="project-link demo-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                    Demo
+                  </a>
+                </div>
+              </div>
+              <p class="project-description">
+                Bienvenido a Yellow Flower, un proyecto web interactivo y
+                visualmente encantador que transmite alegría y cariño a través
+                de una animación de flores amarillas. Inspirado en la calidez
+                del sol y el lenguaje simbólico de las flores, este proyecto
+                busca ser un detalle especial para sorprender a alguien
+                importante. 🌼
+              </p>
+              <div class="project-features">
+                <h4 class="features-title">Características principales:</h4>
+                <ul class="features-list">
+                  <li>
+                    Flores amarillas animadas con pétalos radiales y centro
+                    decorado tipo girasol.
+                  </li>
+                  <li>
+                    Estilo suave y armonioso con paleta pastel y gradientes
+                    cálidos.
+                  </li>
+                  <li>
+                    Animaciones suaves: aparición de flores, balanceo, caída de
+                    pétalos, corazones flotantes.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="project-card project-right" data-animation="fade-up">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">F7ven Times Page</h3>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/nikysv/Platzi_js1"
+                    class="project-link github-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://nikysv.github.io/Platzi_js1/index.html"
+                    class="project-link demo-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                    Demo
+                  </a>
+                </div>
+              </div>
+              <p class="project-description">
+                Pagina web de grupo de covers de Kpop en Youtube.
+              </p>
+              <div class="project-features">
+                <h4 class="features-title">Características principales:</h4>
+                <ul class="features-list">
+                  <li>
+                    Integración con la API de YouTube para mostrar videos.
+                  </li>
+                  <li>Interfaz moderna con Tailwind CSS</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="assets/f7.png" alt="Proyecto 2" class="project-img" />
+              <div class="project-overlay">
+                <div class="project-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">JAVASCRIPT</span>
+                  <span class="tech-tag">CSS</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2 class="cta-title">¿Interesado en colaborar?</h2>
+          <p class="cta-description">
+            Siempre estoy abierto a nuevas oportunidades y proyectos
+            interesantes.
+          </p>
+          <div class="cta-buttons">
+            <a href="contacto.html" class="cta-button primary">Contáctame</a>
+            <a
+              href="https://github.com/tu-usuario"
+              class="cta-button secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              Ver GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Animaciones de entrada para las cards
+      document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        // Observar todos los elementos con animación
+        const animatedElements = document.querySelectorAll("[data-animation]");
+        animatedElements.forEach((el, index) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(30px)";
+          el.style.transition = `opacity 0.8s ease ${
+            index * 0.2
+          }s, transform 0.8s ease ${index * 0.2}s`;
+          observer.observe(el);
+        });
+
+        // Efectos hover para los enlaces de proyectos
+        const projectLinks = document.querySelectorAll(".project-link");
+        projectLinks.forEach((link) => {
+          link.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-2px)";
+          });
+          link.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
